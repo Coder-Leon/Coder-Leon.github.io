@@ -28,6 +28,9 @@ search: true
 # Night mode
 nightMode: true
 
+#百度统计
+baidu-analysis: 83fe7803ace5e55f32623b039b704465
+  
 # Comments 评论功能
 #comments:
  # disqus: false
