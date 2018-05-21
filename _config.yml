@@ -1,7 +1,7 @@
 # Site settings 配置站点
-title: 'Leon的独立博客'
+title: '刘庆梁的个人博客'
 description: '后端开发者/伪极客/学生党，热爱技术。很高兴能在这里与你分享我对技术和生活的思考。'
-keyword: 'Coder, Leon, 刘庆梁 , 刘庆梁的独立博客, 刘庆梁的博客, Leon的博客,  Leon的独立博客, 后端, 后端开发, 后端博客, Java, MySQL, Spring'
+keyword: 'Coder, Leon, 刘庆梁 , 刘庆梁的个人博客, 刘庆梁的博客, Leon的博客,  Leon的个人博客, 后端, 后端开发, 后端博客, Java, MySQL, Spring'
 url: 'http://backender.life' # your host
 
 # if you don't need baseurl, you should leave this value blank.
@@ -19,7 +19,7 @@ nav:
 # Author 配置博主信息
 author: 'Leon'
 nickname: 'Coder-Leon'
-bio: '学生党，伪极客，热爱技术'
+bio: '热爱技术的伪极客Coder'
 avatar: '/assets/img/profile.png'
 
 # Search
@@ -51,6 +51,7 @@ postPatterns: 'circuitBoard'
 sns:
  # weibo: '//weibo.com/u/5843088163'
   github: '//github.com/coder-leon'
+  email: 'mailto:qlliu323@gmail.com'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar

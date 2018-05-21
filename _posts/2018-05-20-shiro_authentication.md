@@ -14,7 +14,7 @@ tags: 后端技术
 - The only reason Spring Security is much more well-known is because of the brand name “Spring” which is famous for simplicity, but ironically many find installing Spring Security little difficult
 Spring Security, however has a better community support.
 
-- Apache Shiro has an additional module over Spring Security of handling Cryptography
+- Apache Shiro has an additional module over Spring Security of handling Cryptography.
 
 ## Shiro的认证流程图
 用ProcessOn画的，学生党，图片都存在七牛云的免费的对象存储空间了。。。
@@ -61,7 +61,9 @@ Shiro的认证流程大致可以分为如图的5个过程，然后呢？
 ``` java
 public void login(AuthenticationToken token) throws AuthenticationException {
         this.clearRunAsIdentitiesInternal();
-        Subject subject = this.ç(this, token);
+        Subject subject = this.securityManager.login(this, token);
+        String host = null;
+        PrincipalCollection principals;
 
 ```
   
