@@ -1,7 +1,7 @@
 # Site settings 配置站点
 title: '刘庆梁的个人博客'
 description: '后端开发者/伪极客/学生党，热爱技术。很高兴能在这里与你分享我对技术和生活的思考。'
-keyword: 'Coder, Leon, 刘庆梁 , 刘庆梁的个人博客, 刘庆梁的博客, Leon的博客,  Leon的个人博客, 后端, 后端开发, 后端博客, Java, MySQL, Spring'
+keyword: 'Coder, Leon, 刘庆梁 , 刘庆梁的个人博客, 刘庆梁的博客, Leon的博客,  Leon的个人博客, 后端, 后端技术, 后端开发, 后端博客, Java, MySQL, Spring'
 url: 'http://backender.life' # your host
 
 # if you don't need baseurl, you should leave this value blank.
@@ -11,10 +11,6 @@ baseurl: ''
 nav:
   home: '/'
   tags: '/tags.html'
-
-# Footer
-#footer:
- # since: 2017
 
 # Author 配置博主信息
 author: 'Leon'
@@ -29,9 +25,9 @@ search: true
 nightMode: true
   
 # Comments 评论功能
-#comments:
- # disqus: false
- # disqus_url: 'https://liaokeyu.disqus.com/embed.js'
+comments:
+  disqus: true
+  disqus_url: 'https://coder-leon.disqus.com/embed.js'
 
 # MathJax 公式支持 
 # mathjax: true
