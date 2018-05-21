@@ -64,8 +64,6 @@ highlighter: rouge
 kramdown:
   input: GFM
 
-#百度统计
-baidu-analysis: 83fe7803ace5e55f32623b039b704465
 
 # RSS
 RSS: false
