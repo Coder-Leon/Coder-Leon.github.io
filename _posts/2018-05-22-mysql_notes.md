@@ -15,7 +15,8 @@ tags: 数据库
   ```SQL
     SELECT DISTINCT vend_id, prod_price FROM products;
   ```
-  原始数据：
+  
+> 原始数据：
   
  vend_id | prod_price 
  :-: | :-: 
@@ -24,7 +25,7 @@ tags: 数据库
  2000 | 200 
  2000 | 200 
 
-  查询结果将是：
+> 查询结果将是：
 
  vend_id | prod_price 
  :-: | :-: 
@@ -39,6 +40,7 @@ tags: 数据库
   ```SQL
     ORDER BY prod_price DESC, prod_name DESC
   ```
+  
 - <> 等同于 !=
 
 - BETWEEN begin AND end 两值之间[begin, end]闭区间，且必须 end > begin
