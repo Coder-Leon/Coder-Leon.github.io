@@ -19,7 +19,7 @@ Shiro的授权流程大致可以分为如图的5个过程。
   
   直接上Demo吧。
   
-  ``` java
+  ```JAVA
   public class ShiroAuthorization {
     SimpleAccountRealm simpleAccountRealm = new SimpleAccountRealm();
     @Before
@@ -56,7 +56,7 @@ Shiro的授权流程大致可以分为如图的5个过程。
   上面的Demo里其实已经完成了前两个步骤，创建SecurityManager和Subject提交认证。
   接下来我们从源码中查看DelegatingSubject类的checkRole方法。
   
-``` java
+```JAVA
  public void checkRole(String role) throws AuthorizationException {
         this.assertAuthzCheckPossible();
         this.securityManager.checkRole(this.getPrincipals(), role);
@@ -68,7 +68,7 @@ Shiro的授权流程大致可以分为如图的5个过程。
   
   继续查看SecurityManager的checkRole方法。
   
-``` java
+```JAVA
     public void checkRole(PrincipalCollection principals, String role) throws AuthorizationException {
         this.authorizer.checkRole(principals, role);
     }
@@ -77,7 +77,7 @@ Shiro的授权流程大致可以分为如图的5个过程。
   
   其中方法是AuthorizingSecurityManager类中的，继续查看其源码，调用的是ModularRealmAuthorizer类中的checkRole方法。其实就是第四步提到的Authorizer授权。
   
-``` java
+```JAVA
    
     public void checkRole(PrincipalCollection principals, String role) throws AuthorizationException {
         this.assertRealmsConfigured();
@@ -89,7 +89,7 @@ Shiro的授权流程大致可以分为如图的5个过程。
   
   可以看到判断里有hasRole方法，我们继续查看其源码，在同一个类中：
   
-``` java
+```JAVA
 public boolean hasRole(PrincipalCollection principals, String roleIdentifier) {
         this.assertRealmsConfigured();
         Iterator var3 = this.getRealms().iterator();

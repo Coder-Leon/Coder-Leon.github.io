@@ -2,13 +2,13 @@
 layout: post
 title: 'Shiro技术学习之Shiro的默认拦截器'
 subtitle: 'Shiro默认拦截器'
-date: 2018-05-22
+date: 2018-05-21
 categories: 后端技术
 tags: 后端技术
 ---
 
 Shiro内置了很多默认的拦截器，比如身份验证、授权等相关的。默认拦截器可以参考org.apache.shiro.web.filter.mgt.DefaultFilter中的枚举拦截器：  
-``` java
+```JAVA
 public enum DefaultFilter {  
     anon(AnonymousFilter.class),  
     authc(FormAuthenticationFilter.class),  
@@ -52,11 +52,11 @@ public enum DefaultFilter {
 
 
 这些默认的拦截器会自动注册，可以直接在ini配置文件中通过“拦截器名.属性”设置其属性：
-``` java
+```JAVA
     perms.unauthorizedUrl=/unauthorized  
 ```
 另外如果某个拦截器不想使用了可以直接通过如下配置直接禁用：
-``` java
+```JAVA
     perms.enabled=false  
 ```
 

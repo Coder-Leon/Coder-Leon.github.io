@@ -26,7 +26,7 @@ Shiro的认证流程大致可以分为如图的5个过程，然后呢？
   
   直接上源码吧。
   
-  ``` java
+  ```JAVA
   public class ShiroAuthentication {
     SimpleAccountRealm simpleAccountRealm = new SimpleAccountRealm();
     @Before
@@ -58,7 +58,7 @@ Shiro的认证流程大致可以分为如图的5个过程，然后呢？
   上面的Demo里其实已经完成了前两个步骤，创建SecurityManager和Subject提交认证。
   接下来我们从源码中查看Subject类的login方法片段。
   
-``` java
+```JAVA
 public void login(AuthenticationToken token) throws AuthenticationException {
         this.clearRunAsIdentitiesInternal();
         Subject subject = this.securityManager.login(this, token);
@@ -71,7 +71,7 @@ public void login(AuthenticationToken token) throws AuthenticationException {
   
   继续查看SecurityManager的login方法片段。
   
-``` java
+```JAVA
 public Subject login(Subject subject, AuthenticationToken token) throws AuthenticationException {
         AuthenticationInfo info;
         try {
@@ -82,7 +82,7 @@ public Subject login(Subject subject, AuthenticationToken token) throws Authenti
   
   其中authenticate方法是AuthenticatingSecurityManager类中的，继续查看其源码。
   
-``` java
+```JAVA
     public AuthenticationInfo authenticate(AuthenticationToken token) throws AuthenticationException {
         return this.authenticator.authenticate(token);
     }
@@ -90,7 +90,7 @@ public Subject login(Subject subject, AuthenticationToken token) throws Authenti
   
   查看其再次调用的authenticate方法，为Authenticator抽象类中的方法，源码如下：
   
-``` java
+```JAVA
 public final AuthenticationInfo authenticate(AuthenticationToken token) throws AuthenticationException {
         if (token == null) {
             throw new IllegalArgumentException("Method argument (authentication token) cannot be null.");
@@ -108,7 +108,7 @@ public final AuthenticationInfo authenticate(AuthenticationToken token) throws A
   
   到此为止，其实就完成了第四个步骤，Authenticator认证。我们继续查看doAuthenticate方法的源码。
   
-``` java
+```JAVA
     protected AuthenticationInfo doAuthenticate(AuthenticationToken authenticationToken) throws AuthenticationException {
         this.assertRealmsConfigured();
         Collection<Realm> realms = this.getRealms();
