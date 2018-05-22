@@ -24,7 +24,7 @@ tags: 数据库
  2000 | 200 
  2000 | 200 
 
- 查询结果将是：
+  查询结果将是：
 
  vend_id | prod_price 
  :-: | :-: 
@@ -50,7 +50,7 @@ tags: 数据库
  1000 | 123  
  1200 | null
  
-   执行以下SQL时，不会返回含有NULL的行。
+ >  执行以下SQL时，不会返回含有NULL的行。
  
   ```SQL
     SELECT * FROM products WHERE vend_id > 1000 ;
