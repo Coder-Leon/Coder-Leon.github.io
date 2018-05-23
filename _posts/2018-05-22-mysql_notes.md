@@ -9,7 +9,7 @@ tags: 数据库
 
 花了半天重新刷完了《MySQL必知必会》这本小书，把SQL复习一下，包括一些要注意的地方。
 
-### 一些需要注意的地方：
+
 - 不能部分使用DISTINCT，DISTINCT应用于所有列而不仅是前置它的列。除非两行的字段数据刚好都一样。例如：
   
   ```SQL
@@ -62,7 +62,7 @@ tags: 数据库
 
 - MySQL中的 NOT 只支持对 IN, BETWEEN 和 EXISTS 取反，这是和其他 DBMS 支持对各种条件取反的差异所在。
 
-- 通配符 % 除了 代表给定位置的一个或多个字符外，还可以代表0个字符。
+- 通配符 % 除了代表给定位置的一个或多个字符外，还可以代表0个字符。
 
 - 通配符 _ 代表一个字符。
 
@@ -94,7 +94,7 @@ tags: 数据库
 > COUNT( column ) 对特定列具有值的行进行计数，会忽略 NULL
 > MAX( ) 、 MIN( ) 与 SUM( )都会忽略对列值 NULL 的计算，虽然好像忽略不忽略不影响结果。
 
-- AVG( ) 可与 DISTINCT 联合使用：\
+- AVG( ) 可与 DISTINCT 联合使用：
 
 ```SQL
     SELECT AVG(DISTINCT prod_price) AS avg_price FROM products;
@@ -218,6 +218,7 @@ COUNT(orders.order_num) AS num_ord
 FROM customers LEFT OUTER JOIN orders ON customers.cust_id = orders.cust_id
 GROUP BY customers.cust_id;
 ```
+
 |cust_name|cust_id|num_ord|
 |:-:|:-:|:-:|
 |Leon|1001|6|
