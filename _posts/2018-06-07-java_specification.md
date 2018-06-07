@@ -14,8 +14,8 @@ tags: Java
      反例：
 
       ```JAVA
-   		String key = "Id#taobao_" + tradeId;
-   		cache.put(key, value);
+   String key = "Id#taobao_" + tradeId;
+   cache.put(key, value);
       ```
 
 2. 【强制】在 long 或者 Long 赋值时，数值后使用大写的 L，不能是小写的 l，小写容易跟数字 1 混淆，造成误解。 说明：Long a = 2l; 写的是数字的 21，还是 Long 型的 2?
@@ -35,29 +35,23 @@ tags: Java
 ## OOP规约：
 
 1. 【强制】Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。 
-
    正例："test".equals(object); 反例：object.equals("test"); 说明：推荐使用 java.util.Objects#equals（JDK7 引入的工具类）
 
 2. 【强制】所有的相同类型的包装类对象之间值的比较，全部使用 equals 方法比较。 
-
    说明：对于 Integer var = ?  在-128 至 127 范围内的赋值，Integer 对象是在 IntegerCache.cache 产生，会复用已有对象，这个区间内的 Integer 值可以直接使用==进行 判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑， 推荐使用 equals 方法进行判断。
 
 3. 【强制】定义 DO/DTO/VO 等 POJO 类时，不要设定任何属性默认值。 
-
    反例：POJO 类的 gmtCreate 默认值为 new Date()，但是这个属性在数据提取时并没有置入具 体值，在更新其它字段时又附带更新了此字段，导致创建时间被修改成当前时间。
 
-4. 【强制】序列化类新增属性时，请不要修改 serialVersionUID 字段，避免反序列失败；如 果完全不兼容升级，避免反序列化混乱，那么请修改 serialVersionUID 值。 
-
-   说明：注意 serialVersionUID 不一致会抛出序列化运行时异常。 
+4. 【强制】序列化类新增属性时，请不要修改 serialVersionUID 字段，避免反序列失败；如果完全不兼容升级，避免反序列化混乱，那么请修改 serialVersionUID 值。 
+说明：注意 serialVersionUID 不一致会抛出序列化运行时异常。 
 
 5. 【强制】构造方法里面禁止加入任何业务逻辑，如果有初始化逻辑，请放在 init 方法中。 
 
 6. 【强制】POJO 类必须写 toString 方法。使用 IDE 中的工具：source> generate toString 时，如果继承了另一个 POJO 类，注意在前面加一下 super.toString。                         
-
    说明：在方法执行抛出异常时，可以直接调用POJO的 toString()方法打印其属性值，便于排查问题。 
 
 7. 【推荐】使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无内容的检查，否则会有抛 IndexOutOfBoundsException 的风险。
-
     说明： 
 
    ```JAVA
@@ -72,7 +66,7 @@ tags: Java
 9. 【推荐】final 可以声明类、成员变量、方法、以及本地变量，下列情况使用 final 关键字： 
 
     1） 不允许被继承的类，如：String 类。 
-
+    
     2） 不允许修改引用的域对象。 
 
     3） 不允许被重写的方法，如：POJO 类的 setter 方法。 
