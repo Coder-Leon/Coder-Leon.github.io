@@ -7,6 +7,8 @@ categories: Java
 tags: Java
 ---
 
+> 有些要点是看其他书籍提到的，也一起记在这了。
+
 # 常量定义：
 
 1. 【强制】不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。  
@@ -84,7 +86,17 @@ tags: Java
 
 12. 【推荐】快速打印二维数组的元素列表，可以使用Arrays类的 deepToString 方法。
 
-13. 【推荐】类成员与方法访问控制从严：  
+13. 【推荐】只能在继承层次内进行类型转换。在将超类转换成子类时，应该先使用 instanceof 进行检查。（Core Java I里的）
+
+    正例：
+
+    ```JAVA
+    if (staff[1] instanceof Manager) {
+        boss = (Manager) staff[1];
+    }
+    ```
+
+14. 【推荐】类成员与方法访问控制从严：  
 
     1） 如果不允许外部直接通过 new 来创建对象，那么构造方法必须是 private。
 
