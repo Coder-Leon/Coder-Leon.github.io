@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '读书笔记-《MySQL必知必会》'
+title: '《MySQL必知必会》读书笔记'
 subtitle: 'MySQL'
 date: 2018-05-22
 categories: 数据库
